@@ -2,7 +2,7 @@
 //Rewrite the code the way it would be seen by the interpreter and predict the output. 
 
 //1. orginal code
-console.log(hello); //log undefined because the console.log is called with the hello function, before hello is declared and initialized
+console.log(hello); //log undefined
 var hello = 'world'; 
 //Predictions - were correct 
 //var hello;
@@ -12,7 +12,7 @@ var hello = 'world';
 //ES6
 console.log(hello);
 let hello = 'world';
-//console.log(hello);// can not access 'hello' before intialization
+//console.log(hello);//logs reference error:  can not access 'hello' before intialization
 //let hello = world;
 
 //2. original code
@@ -24,9 +24,10 @@ function test(){
 }
 //Predictions - were incorrect 
 //var needle = haystack;
-//function test()
-//inside test()- var needle = "magnet"
-//inside test()- console.log(needle) //magnet
+//function test() {
+//var needle = "magnet"
+//console.log(needle)
+//}
 //test(); // logs magnet
 
 //ES6 
@@ -38,9 +39,11 @@ function test(){
 }
 //Predictions - were correct 
 //let needle = haystack;
-//function test()
-//inside test()- let needle = "magnet" //Error needle has already been declared 
-
+//function test() {
+// let needle = "magnet" 
+//console.log('magnet');
+//}
+//test();//logs "magnet"
 
 //3
 var brendan = 'super cool';
@@ -48,13 +51,14 @@ function print(){
     brendan = 'only okay';
     console.log(brendan);
 }
-// console.log(brendan);
+console.log(brendan);
 //Predictions are correct 
-//var brendan = 'super cool;
-//function print()
-//inside print()- brendan = 'only okay';
-//inside print()- console.log(brendan)
-//console.log(brendan);//logs super cool
+//var brendan = 'super cool';
+//function print() {
+//brendan = 'only okay';
+//console.log(brendan)
+//}
+//console.log(brendan);//logs 'super cool'
 
 //3. ES6
 let brendan = 'super cool';
@@ -63,12 +67,13 @@ function print(){
     console.log(brendan);
 }
 console.log(brendan);
-// //Predictions are correct 
+//Predictions are correct 
 //var brendan = 'super cool;
-//function print()
-//inside print()- brendan = 'only okay';
-//inside print()- console.log(brendan)
-//console.log(brendan);//logs super cool
+//function print() {
+//brendan = 'only okay';
+//console.log(brendan);
+//}
+//console.log(brendan);//logs 'super cool'
 
 //4. 
 var food = 'chicken';
@@ -81,11 +86,12 @@ function eat(){
 }
 //Predications are correct 
 //var food = 'chicken';
-//console.log(food); // logs chicken
-//function eat()
-//inside eat()=> food = 'half-chicken' 
-//inside eat() => console.log(food); //logs 'half-chicken'
-//inside eat() => var food = 'gone'
+//console.log(food); // logs 'chicken'
+//function eat() {
+//food = 'half-chicken' 
+//console.log(food);
+//var food = 'gone';
+//}
 //eat(); //logs 'half-chicken'
 
 
@@ -101,8 +107,7 @@ function eat(){
 //Predications are incorrect 
 //let food = 'chicken';
 //console.log(food); // logs chicken
-//function eat()
-//inside eat()=> food = 'half-chicken';// logs error : Cannot access 'food' before initialzation
+//eat()//logs Reference Error: "logs" Cannot access 'food' before initialization 
 
 //5
 mean();
@@ -114,16 +119,13 @@ var mean = function() {
     console.log(food);
 }
 console.log(food);
-//Predictions 
+//Predictions were wrong
 //var mean = function() {
     //food = "chicken";
     //console.log(food)// logs undefined
     //var food = "fish";
-    //console.log(food) // logs //fish
+    //console.log(food) // logs fish
 //}
-//mean() //logs undefined, fish 
-//console.log(food); //logs error - food is not defined
-//console.log(food); //logs error food is not undefined
 
 
 //Predictions were wrong
@@ -142,6 +144,11 @@ console.log(food);
 //Predictions 
 //mean(); logs mean is not a function
 
+//Predications were wrong 
+//mean()
+//console.log(food); //Reference Error: food is not defined 
+
+
 //6
 console.log(genre);
 var genre = "disco";
@@ -159,7 +166,7 @@ console.log(genre);
 //genre = "disco"
 //function rewind ()  {
     //genre = "rock";
-    //console.log(genre);// logs rock
+    //console.log(genre);// logs 'rock'
     //var grene = "r&b"; logs genre is already declared 
 //}
 //console.log(genre)// logs disco
@@ -225,7 +232,7 @@ function learn() {
 console.log(dojo);
 //Predications 
 //dojo = "san jose";
-//console.log(dojo); //log Cannot access 'dojo' before initialization 
+//console.log(dojo); //log reference error: Cannot access 'dojo' before initialization 
 
 
 //8
