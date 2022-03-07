@@ -18,11 +18,11 @@ const employee = {
 }
 const { name: otherName } = employee;
 //Predict the output
-console.log(name);// logs employee
+console.log(name);// logs 'Elon';
 console.log(otherName);// logs 'Elon'
 
 //Prediction was wrong
-//console.log(name); //logs - Reference error- name is not defined 
+//console.log(name); //logs - Reference error name is not defined 
 
 
 //Problem 3
@@ -35,7 +35,7 @@ const password = '12345';
 const { password: hashedPassword } = person;  
 //Predict the output- predications were correct 
 console.log(password);// logs '12345'
-console.log(hashedPassword);// logs undefined 
+console.log(hashedPassword);// logs 'undefined' 
 
 //Problem 4 
 const numbers = [8, 2, 3, 5, 6, 1, 67, 12, 2];
