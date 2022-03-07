@@ -38,10 +38,10 @@
             return setBackgroundColorById("body", "white");
         }
         const getValueFromId = (id) => {
-            return document.getElementById(`${id}`).value;
+            return document.getElementById(id).value;
         }
         const setBackgroundColorById = (id, color) => {
-            return document.getElementById(`${id}`).style = `background-color: ${color}`;
+            return document.getElementById(id).style = `background-color: ${color}`;
         }
         const mouseOverFunction = (el) => {
             return el.style = "background-color: " + document.getElementById("color-change").value;
