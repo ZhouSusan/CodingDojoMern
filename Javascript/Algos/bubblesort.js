@@ -24,7 +24,7 @@ const bubbleSort = (nums, leng = nums.length) => {
     if (leng <= 1) {
         return nums;
     }
-    for (let i = 0; i < leng; i++) {
+    for (let i = 0; i < leng-1; i++) {
         if (nums[i] > nums[i+1]) {
             let temp = nums[i];
             nums[i] = nums[i+1];
@@ -34,11 +34,6 @@ const bubbleSort = (nums, leng = nums.length) => {
     }
     return nums;
 }
-
-// // call the function and pass nums1, nums2, nums3
-// console.log(bubbleSort(nums1));
-// console.log(bubbleSort(nums2));
-// console.log(bubbleSort(nums3));
 
 function arraysIsEqual(actual, expected, testName="Bubble sort") {
     let sameSize = actual.length === expected.length;
