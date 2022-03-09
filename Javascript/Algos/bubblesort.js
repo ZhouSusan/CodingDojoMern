@@ -59,7 +59,12 @@ arraysIsEqual(actual1, expected1);
 const nums2 = [9, 2, 5, 6, 4, 3, 7, 10, 1, 8];
 const actual2 = bubbleSort(nums2);
 const expected2 = [1, 2, 3, 4, 5, 6, 7, 8,  9, 10];
-
-const nums3 = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
-arraysIsEqual(actual1, expected1);
 arraysIsEqual(actual2, expected2);
+
+const actual3 = bubbleSort([10, 9, 8, 7, 6, 5, 4, 3, 2, 1]);
+const expected3 = [1, 2, 3, 4, 5, 6, 7, 8,  9, 10];
+arraysIsEqual(actual3, expected3);
+
+const actual4 = bubbleSort([5, 10 ,1]);
+const expected4 = [1, 5, 10]
+arraysIsEqual(actual4, expected4);
