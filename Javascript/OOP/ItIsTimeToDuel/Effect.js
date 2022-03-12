@@ -9,7 +9,7 @@ export class Effect extends Card{
     }
     play ( target ) {
         if( target instanceof Unit ) {
-            if (this.magnitude < 0) {
+            if (this.magnitude < 0 || this.power <0) {
                 if (this.stat === "resilience") {
                     target.res += this.magnitude;
                     console.log(`Decrease the target's ${this.stat} by ${Math.floor(this.magnitude)}.`);
