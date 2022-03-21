@@ -37,6 +37,7 @@ function diagonalDifference(sqrMatrix) {
         return 0;
     }
 
+    
     let leftDiagonal = 0;
     let rightDiagonal = 0;
     let size = sqrMatrix.length;
