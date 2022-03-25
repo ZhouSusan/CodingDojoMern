@@ -55,11 +55,6 @@ function findByIdAndUpdate(id, updatedVals, collection) {
         }
     }
 
-    // if (!idPresent) {
-    //     return {}
-    // } else {
-    //     return collection;
-    // }
     return !idPresent ? null : collection; 
 }
 
